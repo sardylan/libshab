@@ -55,5 +55,10 @@ message(STATUS "Build libshab as a shared library: ${BUILD_SHARED_LIBS}")
 
 message(STATUS "Install root: ${CMAKE_INSTALL_PREFIX}")
 
+set(CMAKE_INSTALL_RPATH
+        "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}"
+        "${QT5_PREFIX}/lib")
+message(STATUS "RPATH: ${CMAKE_INSTALL_RPATH}")
+
 add_subdirectory(src)
 add_subdirectory(test)
